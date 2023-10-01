@@ -1,0 +1,14 @@
+<div id="container">
+
+  <h1>Hello World !</h1>
+
+  <ul>
+    <li><app-home></app-home></li>
+  </ul>
+
+  <input #pseudoField type="text" [(ngModel)]="pseudo" (keypress)="onPseudoFieldKeyPressed($event)"/>
+  <button (click)="clearPseudoField()">Clear</button><br/><br/>
+  <p>Added pseudo :</p>
+  <app-hello-item *ngFor="let hello of pseudoList; let pseudoId=index" [pseudo]="hello" (onRemovePressed)="removePseudo(pseudoId)"/>
+
+</div>
